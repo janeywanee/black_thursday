@@ -25,7 +25,7 @@ class ItemRepo
             item.name.downcase == name.downcase
         end
     end
-    
+
     def find_all_with_description(description)
         items.find_all do |item|
             item.description.downcase.include?(description.downcase)
@@ -45,7 +45,7 @@ class ItemRepo
     end
 
   def find_all_by_merchant_id(id)
-    items.find_all do |item| 
+    items.find_all do |item|
         item.merchant_id == id
     end
   end
@@ -70,6 +70,7 @@ class ItemRepo
     end
 
     def update(id, attrs)
+      require "pry"; binding.pry
         item_to_update = find_by_id(id)
         item_to_update.name = attrs[:name]
         item_to_update.description = attrs[:description]
