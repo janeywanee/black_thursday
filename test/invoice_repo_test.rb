@@ -20,4 +20,8 @@ class InvoiceRepoTest < Minitest::Test
     assert_instance_of Array, invoice_repo.all
     assert_instance_of Invoice, invoice_repo.all.sample
   end
+
+  def test_it_returns_nil_if_there_is_no_id
+    assert_nil invoice_repo.find_by_id(2)
+  end
 end
