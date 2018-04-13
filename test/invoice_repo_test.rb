@@ -14,4 +14,10 @@ class InvoiceRepoTest < Minitest::Test
   def test_it_exists
     assert_instance_of InvoiceRepo, invoice_repo
   end
+
+  def test_it_returns_am_array_of_all_invoices
+    assert_equal 10, invoice_repo.all.count
+    assert_instance_of Array, invoice_repo.all
+    assert_instance_of Invoice, invoice_repo.all.sample
+  end
 end
