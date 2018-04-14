@@ -5,12 +5,13 @@ class InvoiceTest < Minitest::Test
   attr_reader :invoice
 
   def setup
-    @invoice = Invoice.new({ :id => 5,
+    @invoice = Invoice.new({
+                              :id => 5,
                               :customer_id => 1,
                               :merchant_id => 12335938,
-                              :status => "pending",
-                              :created_at => "2018-04-10",
-                              :updated_at => "2018-04-10"
+                              :status => 'pending',
+                              :created_at => '2018-04-10',
+                              :updated_at => '2018-04-10'
                                 }, self)
   end
 

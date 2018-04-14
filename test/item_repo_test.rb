@@ -4,7 +4,7 @@ require_relative '../lib/item_repo'
 
 class ItemRepoTest < Minitest::Test
     attr_reader :parent, :item_repo, :attrs
-   
+
     def setup
         @attrs = {
             :id          => "263395721",
@@ -62,8 +62,8 @@ class ItemRepoTest < Minitest::Test
 
         items_array = items.map { |item| item.id }
 
-        assert_equal [263395237, 263395617, 
-                      263395721, 263395239, 
+        assert_equal [263395237, 263395617,
+                      263395721, 263395239,
                       263395619, 263395729], items_array
     end
 
@@ -73,8 +73,8 @@ class ItemRepoTest < Minitest::Test
 
         items_array = items.map { |item| item.id }
 
-        assert_equal [263395617, 263395721, 
-                      263396013, 263395619, 
+        assert_equal [263395617, 263395721,
+                      263396013, 263395619,
                       263395729, 263396011], items_array
     end
 

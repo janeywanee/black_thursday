@@ -3,9 +3,17 @@ require_relative '../lib/invoice_repo'
 
 class InvoiceRepoTest < Minitest::Test
   attr_reader :invoice_repo,
-              :parent
+              :parent,
+              :attrs
 
   def setup
+    @attrs = {
+        :id          => 5,
+        :customer_id => 1,
+        :merchant_id =>12335938,
+        :status      => 'pending',
+        :created_at  => '2018-04-10',
+        :updated_at  => '2018-04-10'}
     data = LoadFile.load('./test/fixture_data/invoice_repo_fixture.csv')
     @parent = Minitest::Mock.new
     @invoice_repo = InvoiceRepo.new(data, parent)
@@ -61,5 +69,8 @@ class InvoiceRepoTest < Minitest::Test
     assert_equal 26, invoice_repo.find_max_id
   end
 
-  
+  def test_it_can_create_a_new_invoice
+      assert_instance_of Invoice, invoice_repo.create(attrs)
+    
+  end
 end
