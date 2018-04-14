@@ -36,4 +36,9 @@ class InvoiceRepo
     end
   end
 
+  def find_all_by_pending_status(pend_status)
+    invoices.find_all do |invoice|
+      invoice.status == pend_status
+    end
+  end
 end

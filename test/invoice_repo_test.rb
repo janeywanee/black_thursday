@@ -16,7 +16,7 @@ class InvoiceRepoTest < Minitest::Test
   end
 
   def test_it_returns_am_array_of_all_invoices
-    assert_equal 10, invoice_repo.all.count
+    assert_equal 25, invoice_repo.all.count
     assert_instance_of Array, invoice_repo.all
     assert_instance_of Invoice, invoice_repo.all.sample
   end
@@ -40,4 +40,9 @@ class InvoiceRepoTest < Minitest::Test
   def test_it_returns_empty_array_if_no_valid_merchant_id
     assert_equal [], invoice_repo.find_all_by_merchant_id(0000000)
   end
+
+  def test_it_can_find_all_by_pending_status
+    assert_equal 10, invoice_repo.find_all_by_pending_status("pending").count
+  end
+
 end
