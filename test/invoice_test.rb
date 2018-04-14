@@ -6,8 +6,8 @@ class InvoiceTest < Minitest::Test
 
   def setup
     @invoice = Invoice.new({ :id => 5,
-                              :customer_id => 6,
-                              :merchant_id => 7,
+                              :customer_id => 1,
+                              :merchant_id => 12335938,
                               :status => "pending",
                               :created_at => "2018-04-10",
                               :updated_at => "2018-04-10"

@@ -18,9 +18,16 @@ class InvoiceRepo
   end
 
   def find_by_id(id)
-    all.find do |invoice| 
+    invoices.find do |invoice|
       invoice.id == id
     end
     nil
   end
+
+  def find_all_by_customer_id(cust_id)
+    invoices.find_all do |invoice|
+      invoice.customer_id == cust_id
+    end
+  end
+
 end

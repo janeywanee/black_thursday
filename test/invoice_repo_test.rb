@@ -24,4 +24,12 @@ class InvoiceRepoTest < Minitest::Test
   def test_it_returns_nil_if_there_is_no_id
     assert_nil invoice_repo.find_by_id(2)
   end
+
+  def test_it_can_find_all_customers
+    assert_equal 8, invoice_repo.find_all_by_customer_id(1).count
+  end
+
 end
+
+
+# find_all_by_customer_id - returns either [] or one or more matches which have a matching customer ID

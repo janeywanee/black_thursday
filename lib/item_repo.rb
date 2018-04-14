@@ -70,7 +70,6 @@ class ItemRepo
     end
 
     def update(id, attrs)
-      require "pry"; binding.pry
         item_to_update = find_by_id(id)
         item_to_update.name = attrs[:name]
         item_to_update.description = attrs[:description]
