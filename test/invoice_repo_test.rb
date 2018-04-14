@@ -42,15 +42,24 @@ class InvoiceRepoTest < Minitest::Test
   end
 
   def test_it_can_find_all_by_pending_status
-    assert_equal 10, invoice_repo.find_all_by_pending_status("pending").count
+    assert_equal 10, invoice_repo.find_all_by_status("pending").count
   end
 
   def test_it_can_find_all_by_shipped_status
-    assert_equal 14, invoice_repo.find_all_by_pending_status("shipped").count
+    assert_equal 14, invoice_repo.find_all_by_status("shipped").count
   end
 
   def test_it_can_find_all_by_returned_status
-    assert_equal 1, invoice_repo.find_all_by_pending_status("returned").count
+    assert_equal 1, invoice_repo.find_all_by_status("returned").count
   end
 
+  def test_returns_empty_array_if_no_valid_statuses
+    assert_equal [], invoice_repo.find_all_by_status("hello")
+  end
+
+  def test_it_can_find_max_id
+    assert_equal 26, invoice_repo.find_max_id
+  end
+
+  
 end

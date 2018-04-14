@@ -36,9 +36,16 @@ class InvoiceRepo
     end
   end
 
-  def find_all_by_pending_status(status)
+  def find_all_by_status(status)
     invoices.find_all do |invoice|
       invoice.status == status
     end
   end
+
+  def find_max_id
+    max = invoices.max_by { |invoice| invoice.id }
+      max.id.to_i + 1
+  end
+
+  
 end
