@@ -29,7 +29,11 @@ class InvoiceRepoTest < Minitest::Test
     assert_equal 8, invoice_repo.find_all_by_customer_id(1).count
   end
 
+  def test_it_returns_array_if_no_valid_cust_id
+    assert_equal [], invoice_repo.find_all_by_customer_id(0000000)
+  end
+
+  def test_it_can_find_all_by_merchant_id
+    assert_equal 1, invoice_repo.find_all_by_merchant_id(12334269).count
+  end
 end
-
-
-# find_all_by_customer_id - returns either [] or one or more matches which have a matching customer ID
