@@ -50,7 +50,7 @@ class InvoiceRepo
   def create(attrs)
         attrs[:id] = find_max_id.to_s
         new_invoice = Invoice.new(attrs, self)
-        # new_invoice.created_at = Time.now
+        new_invoice.created_at = Time.now
         new_invoice.updated_at = Time.now
         invoices << new_invoice
         return new_invoice

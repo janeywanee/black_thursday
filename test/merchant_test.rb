@@ -8,8 +8,8 @@ class MerchantTest < Minitest::Test
   def setup
     @m = Merchant.new({ :id => 5,
                         :name => 'Turing School',
-                        :created_at => "2018-04-10",
-                        :updated_at => "2018-04-10"
+                        :created_at => '2018-04-10',
+                        :updated_at => '2018-04-10'
                         }, self)
   end
 
@@ -26,10 +26,10 @@ class MerchantTest < Minitest::Test
   end
 
   def test_it_has_created_at
-    assert_equal "2018-04-10", m.created_at
+    assert_equal Time.parse('2018-04-10'), m.created_at
   end
 
   def test_it_has_updated_at
-    assert_equal "2018-04-10", m.updated_at
+    assert_equal Time.parse('2018-04-10'), m.updated_at
   end
 end

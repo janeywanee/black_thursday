@@ -12,4 +12,12 @@ class Merchant
     @updated_at = data[:updated_at]
     @parent     = parent
   end
+
+  def created_at
+    Time.parse(@created_at.to_s)
+  end
+
+  def updated_at
+    Time.parse(@updated_at.to_s)
+  end
 end
