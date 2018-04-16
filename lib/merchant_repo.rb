@@ -1,5 +1,5 @@
 require 'csv'
-require 'time'
+require 'date'
 require_relative 'merchant'
 require_relative '../lib/load_file'
 
@@ -43,8 +43,8 @@ class MerchantRepo
   def create(attrs)
     attrs[:id] = find_max_id.to_s
     new_merchant = Merchant.new(attrs, self)
-    new_merchant.created_at = Time.now
-    new_merchant.updated_at = Time.now
+    new_merchant.created_at = Time.new
+    new_merchant.updated_at = Time.new
     all << new_merchant
   end
 

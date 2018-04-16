@@ -71,6 +71,5 @@ class InvoiceRepoTest < Minitest::Test
 
   def test_it_can_create_a_new_invoice
       assert_instance_of Invoice, invoice_repo.create(attrs)
-    
   end
 end

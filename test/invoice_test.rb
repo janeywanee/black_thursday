@@ -24,7 +24,7 @@ class InvoiceTest < Minitest::Test
   end
 
   def test_it_returns_a_customer_id
-    assert_equal 6, invoice.customer_id
+    assert_equal 1, invoice.customer_id
   end
 
   def test_it_returns_the_status

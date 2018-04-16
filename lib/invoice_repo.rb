@@ -49,11 +49,10 @@ class InvoiceRepo
 
   def create(attrs)
         attrs[:id] = find_max_id.to_s
-        new_merchant = Invoice.new(attrs, self)
-        new_merchant.created_at = Time.now
-        new_merchant.updated_at = Time.now
-        items << new_merchant
-        return new_merchant
+        new_invoice = Invoice.new(attrs, self)
+        # new_invoice.created_at = Time.now
+        new_invoice.updated_at = Time.now
+        invoices << new_invoice
+        return new_invoice
   end
-
 end

@@ -1,5 +1,6 @@
 require_relative 'test_helper'
 require_relative '../lib/merchant'
+require_relative '../lib/merchant_repo'
 
 class MerchantTest < Minitest::Test
   attr_reader :m

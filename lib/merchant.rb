@@ -1,15 +1,15 @@
 class Merchant
   attr_reader :id,
-              :parent            
+              :parent
   attr_accessor :name,
                 :created_at,
                 :updated_at
 
-  def initialize(params, parent)
-    @id         = params[:id].to_i
-    @name       = params[:name]
-    @created_at = params[:created_at]
-    @updated_at = params[:updated_at]
+  def initialize(data, parent)
+    @id         = data[:id].to_i
+    @name       = data[:name]
+    @created_at = data[:created_at]
+    @updated_at = data[:updated_at]
     @parent     = parent
   end
 end
