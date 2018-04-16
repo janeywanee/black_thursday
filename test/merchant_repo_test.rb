@@ -1,4 +1,5 @@
 require_relative 'test_helper'
+require_relative '../lib/merchant'
 require_relative '../lib/merchant_repo'
 
 class MerchantRepoTest < Minitest::Test
@@ -62,9 +63,8 @@ class MerchantRepoTest < Minitest::Test
     attrs_2 = {name: 'Bread Shop'}
     id = merchant.id
     mr.update(id, attrs_2)
-
     assert_equal 'Bread Shop', merchant.name
-    assert_equal "2018-04-15", merchant.updated_at
+    assert_equal "2018-04-16", merchant.updated_at
   end
 
   def test_it_can_delete_a_merchant

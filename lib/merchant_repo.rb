@@ -1,5 +1,5 @@
 require 'csv'
-require 'date'
+require 'time'
 require_relative 'merchant'
 require_relative '../lib/load_file'
 

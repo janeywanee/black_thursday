@@ -13,11 +13,12 @@ class Merchant
     @parent     = parent
   end
 
-  def created_at
-    Time.parse(@created_at.to_s)
-  end
-
-  def updated_at
-    Time.parse(@updated_at.to_s)
-  end
+  # def created_at
+  #   Time.parse(@created_at.to_s)
+  # end
+  #
+  # def updated_at
+    # Time.parse(@updated_at.to_s)
+    # @updated_at.Time.now.strftime("%Y-%m-%d")
+  # end
 end
