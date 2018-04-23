@@ -1,5 +1,5 @@
-require './test/test_helper'
-require './lib/load_file'
+require_relative 'test_helper'
+require_relative '../lib/load_file'
 
 class LoadFileTest < Minitest::Test
 
@@ -12,5 +12,4 @@ class LoadFileTest < Minitest::Test
     actual = LoadFile.load(file_name)
     assert_instance_of CSV, actual
   end
-
 end

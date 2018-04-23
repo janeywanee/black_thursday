@@ -1,5 +1,6 @@
 require_relative 'merchant_repo'
 require_relative 'item_repo'
+require_relative 'invoice_repo'
 require_relative 'sales_relationships'
 require_relative 'load_file'
 
@@ -14,11 +15,19 @@ class SalesEngine
     SalesEngine.new(path)
   end
 
-  def item_repo
-    @item_repo ||= ItemRepo.new(LoadFile.load(path[:item_data]), self)
+  def analyst
+    SalesAnalyst.new(self)
   end
 
-  def merchant_repo
-    @merchant_repo ||= MerchantRepo.new(LoadFile.load(path[:merchant_data]), self)
+  def items
+    @items ||= ItemRepo.new(LoadFile.load(@path[:items]), self)
+  end
+
+  def merchants
+    @merchants ||= MerchantRepo.new(LoadFile.load(@path[:merchants]), self)
+  end
+
+  def invoices
+    @invoices ||= InvoiceRepo.new(LoadFile.load(@path[:invoices]),self)
   end
 end
